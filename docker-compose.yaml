@@ -1,0 +1,40 @@
+version: "3.2"
+
+services:
+  mysql:
+    build: ./mysql_image
+    image: mysql-test
+    container_name: mysql-test
+    hostname: mysql-test
+    tty: false
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: bind
+        source: $HOME/cns_mysql_data
+        target: /var/lib/mysql
+
+    networks:
+        net-172.24.0.0:
+          ipv4_address: 172.24.0.5
+
+      
+  www:
+    build: ./www_image
+    image: www-test
+    container_name: www-test
+    hostname: www-test
+    ports:
+      - "8080:80"
+    tty: true
+
+    networks:
+        net-172.24.0.0:
+          ipv4_address: 172.24.0.6
+
+networks:
+    net-172.24.0.0:
+        name: net-172.24.0.0
+        ipam:
+            config:
+                - subnet: 172.24.0.0/16
