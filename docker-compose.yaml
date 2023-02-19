@@ -3,9 +3,9 @@ version: "3.2"
 services:
   mysql:
     build: ./mysql_image
-    image: mysql-test
-    container_name: mysql-test
-    hostname: mysql-test
+    image: mysql-sqli
+    container_name: mysql-sqli
+    hostname: mysql-sqli
     tty: false
     ports:
       - "3306:3306"
@@ -21,9 +21,9 @@ services:
       
   www:
     build: ./www_image
-    image: www-test
-    container_name: www-test
-    hostname: www-test
+    image: www-sqli
+    container_name: www-sqli
+    hostname: www-sqli
     ports:
       - "8080:80"
     tty: true
