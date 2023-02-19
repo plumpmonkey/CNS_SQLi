@@ -19,7 +19,7 @@
     <a class="navbar-brand" href="#" ><img src="UWE_Logos.png" style="height: 60px; width: 194px;" alt="UWE"></a>
       <ul class='navbar-nav mr-auto mt-2 mt-lg-0' style='padding-left: 30px;'>
         <li class='nav-item '>
-          <a class='nav-link' href='unsafe_login.php'>Edit Profile</a>
+          <a class='nav-link' href='unsafe_login.php'>Home</a>
         </li>
         <li class='nav-item active'>
           <a class='nav-link' href='unsafe_edit_frontend.php'>Edit Profile</a>
