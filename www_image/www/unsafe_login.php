@@ -50,10 +50,13 @@
 
       // create a connection
       $conn = getDB();
+
       // Sql query to authenticate the user
       $sql = "SELECT ID, name, eid, salary, birth, NationalInsuranceNo, PhoneNumber, Email, Password
       FROM credentials
       WHERE name= '$input_uname' and Password='$hashed_pwd'";
+
+      // run the query
       if (!$result = $conn->query($sql)) {
         echo "</div>";
         echo "</nav>";
@@ -90,7 +93,7 @@
         echo "<div class='container text-center'>";
         echo "<div class='alert alert-danger'>";
         echo "The account information your provide does not exist.";
-        echo "ID = $id";
+        echo "ID = $input_uname";
         echo "pw = $hashed_pwd";
         echo "<br>";
         echo "</div>";
